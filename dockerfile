@@ -22,4 +22,4 @@ RUN mkdir /app
 WORKDIR /app
 RUN cp /azure-iot-sdk-python/device/samples/* /app
 COPY . .
-CMD [ "python", "-u", "./iottest.py" ]
+CMD [ "python3.5", "-u", "./iottest.py" ]
