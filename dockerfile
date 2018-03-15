@@ -15,6 +15,10 @@ RUN git checkout d3619f8d5ec0beca87b0d3b98833ae8053c39419
 RUN git submodule update --init --recursive
 
 WORKDIR /azure-iot-sdk-python/build_all/linux
-#RUN apt-get install -y sudo build-essential pkg-config libcurl3-openssl-dev git cmake libssl-dev uuid-dev libboost-python-dev
 RUN  apt-get install -y sudo build-essential pkg-config libcurl3-openssl-dev git cmake libssl-dev uuid-dev libboost-python-dev python3.5-dev
 RUN ./build.sh --build-python 3.5 
+
+RUN mkdir /app
+WORKDIR /app
+COPY /azure-iot-sdk-python/c/cmake/iotsdk_linux/python/src/iothub_client.so /app
+CMD [ "python", "-u", "./iottest.py" ]
