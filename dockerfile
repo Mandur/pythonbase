@@ -20,6 +20,6 @@ RUN ./build.sh --build-python 3.5
 
 RUN mkdir /app
 WORKDIR /app
-RUN cp /azure-iot-sdk-python/device/samples/iothub_client.so /app
+RUN cp /azure-iot-sdk-python/device/samples/* /app
 COPY . .
 CMD [ "python", "-u", "./iottest.py" ]
