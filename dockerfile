@@ -17,4 +17,4 @@ RUN git submodule update --init --recursive
 WORKDIR /azure-iot-sdk-python/build_all/linux
 #RUN apt-get install -y sudo build-essential pkg-config libcurl3-openssl-dev git cmake libssl-dev uuid-dev libboost-python-dev
 RUN  apt-get install -y sudo build-essential pkg-config libcurl3-openssl-dev git cmake libssl-dev uuid-dev libboost-python-dev
-RUN ./build.sh --build-version 3.5
+RUN ./build.sh --build-python 3.5
